@@ -10,9 +10,7 @@ import {
   Zap,
   Shield,
   Wifi,
-  Sparkles,
   CheckCircle2,
-  Play,
 } from "lucide-react";
 
 export default function Hero() {
@@ -40,27 +38,28 @@ export default function Hero() {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 mb-6 backdrop-blur-md">
               <span className="w-2 h-2 rounded-full bg-[#00e5ff] shadow-[0_0_8px_#00e5ff] animate-pulse"></span>
               <span className="text-xs font-semibold tracking-wider text-zinc-300 uppercase">
-                %100 Yerel Wi-Fi • Sıfır Bulut • &lt;3ms Gecikme
+                100% Local Wi-Fi • Zero Cloud • &lt;3ms Latency
               </span>
             </div>
 
             {/* Main Catchy Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12] mb-6">
-              Yatağından PC&apos;ni{" "}
+              Control Your PC Like a{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e5ff] via-[#c3f5ff] to-[#00e676]">
-                Gerçek Bir TV Kumandası
+                Smart TV Remote
               </span>{" "}
-              Gibi Yönet.
+              From Your Bed or Couch.
             </h1>
 
             {/* Clear Subtitle */}
             <p className="text-lg sm:text-xl text-zinc-400 font-normal leading-relaxed max-w-2xl mb-8">
-              Hantal kablosuz klavyelerden ve 2012&apos;den kalma reklam dolu
-              uygulamalardan kurtulun. TouchBase;{" "}
+              Ditch clumsy wireless keyboards and bloated, ad-infested 2012 remote apps.
+              TouchBase unifies{" "}
               <strong className="text-zinc-200">YouTube, Netflix, Spotify</strong>{" "}
-              kısayolları, 1000Hz akıcı dinamik cam trackpad, parmak iziyle Windows
-              kilit açma ve <strong className="text-[#00e5ff]">Wake-on-LAN</strong>{" "}
-              gücünü saf OLED siyahında buluşturur.
+              controls, a 1000Hz dynamic glass trackpad, biometric Windows Hello
+              fingerprint unlock, and{" "}
+              <strong className="text-[#00e5ff]">Wake-on-LAN</strong> power—all
+              enveloped in pure OLED black.
             </p>
 
             {/* Primary Action Buttons */}
@@ -77,7 +76,7 @@ export default function Hero() {
                 </div>
                 <div className="flex flex-col text-left">
                   <span className="text-[11px] font-semibold uppercase tracking-wider text-zinc-400">
-                    Android İçin İndir
+                    Get for Android
                   </span>
                   <span className="text-sm font-bold text-white group-hover:text-[#00e5ff] transition-colors">
                     Google Play Store
@@ -96,10 +95,10 @@ export default function Hero() {
                 </div>
                 <div className="flex flex-col text-left">
                   <span className="text-[11px] font-bold uppercase tracking-wider text-black/70">
-                    Bilgisayar İçin İndir
+                    Download for PC
                   </span>
                   <span className="text-sm font-black text-black flex items-center gap-1.5">
-                    Windows Sunucusu <Download className="w-4 h-4" />
+                    Windows Host <Download className="w-4 h-4" />
                   </span>
                 </div>
               </a>
@@ -107,13 +106,13 @@ export default function Hero() {
 
             {/* Direct APK Link */}
             <div className="flex items-center gap-2 text-xs text-zinc-400 mb-8">
-              <span>Google Play yok mu?</span>
+              <span>Don&apos;t have Google Play?</span>
               <a
                 href="/downloads/TouchBase.apk"
                 download
                 className="text-[#00e5ff] hover:underline font-semibold flex items-center gap-1"
               >
-                Doğrudan APK İndir (v1.0.0 • 2.4 MB)
+                Direct APK Sideload (v1.0.0 • 2.4 MB)
               </a>
             </div>
 
@@ -122,25 +121,25 @@ export default function Hero() {
               <div className="flex items-center gap-2 text-left">
                 <Shield className="w-4 h-4 text-[#00e676] shrink-0" />
                 <span className="text-xs text-zinc-300 font-medium">
-                  Sıfır Bulut / Tam Gizlilik
+                  Zero Cloud / 100% Privacy
                 </span>
               </div>
               <div className="flex items-center gap-2 text-left">
                 <Zap className="w-4 h-4 text-[#00e5ff] shrink-0" />
                 <span className="text-xs text-zinc-300 font-medium">
-                  1-3ms Yanıt Süresi
+                  1-3ms Sub-Frame Latency
                 </span>
               </div>
               <div className="flex items-center gap-2 text-left">
                 <CheckCircle2 className="w-4 h-4 text-[#ff9100] shrink-0" />
                 <span className="text-xs text-zinc-300 font-medium">
-                  Abonelik Yok / Ömür Boyu
+                  No Subscriptions / Lifetime
                 </span>
               </div>
               <div className="flex items-center gap-2 text-left">
                 <Wifi className="w-4 h-4 text-[#c3f5ff] shrink-0" />
                 <span className="text-xs text-zinc-300 font-medium">
-                  Otomatik Wi-Fi Keşfi
+                  Instant Auto-Discovery
                 </span>
               </div>
             </div>
@@ -186,10 +185,10 @@ export default function Hero() {
                 {/* Bottom Overlay Hint */}
                 <div className="absolute bottom-4 inset-x-4 bg-gradient-to-t from-black via-black/90 to-transparent p-3 rounded-2xl border border-white/10 backdrop-blur-sm text-center">
                   <p className="text-[11px] font-semibold text-zinc-300">
-                    OLED Saf Siyah • Squircle Hissiyat
+                    OLED Pitch Black • Tactile Squircles
                   </p>
                   <p className="text-[9px] text-[#00e5ff] uppercase font-bold tracking-widest mt-0.5">
-                    100% Batarya Dostu
+                    100% Battery Friendly
                   </p>
                 </div>
               </div>
@@ -202,7 +201,7 @@ export default function Hero() {
               </div>
               <div className="flex flex-col text-left">
                 <span className="text-xs font-bold text-white">Wake-on-LAN</span>
-                <span className="text-[10px] text-zinc-400">Kapalı PC&apos;yi Aç</span>
+                <span className="text-[10px] text-zinc-400">Power On PC Remotely</span>
               </div>
             </div>
 
@@ -213,7 +212,7 @@ export default function Hero() {
               </div>
               <div className="flex flex-col text-left">
                 <span className="text-xs font-bold text-white">Windows Hello</span>
-                <span className="text-[10px] text-zinc-400">Parmak İzi ile Aç</span>
+                <span className="text-[10px] text-zinc-400">Fingerprint Unlock</span>
               </div>
             </div>
           </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import {
   Tv,
   MousePointer,
@@ -10,78 +9,76 @@ import {
   MonitorPlay,
   Compass,
   Keyboard,
-  Sliders,
-  Layers,
   Sparkles,
 } from "lucide-react";
 
 export default function FeatureGrid() {
   const features = [
     {
-      title: "Smart TV Kumandası & Medya Başlatıcılar",
+      title: "Smart TV Remote & Media Launchers",
       description:
-        "YouTube, Netflix ve Spotify'a tek tıkla geçiş yapın. Ses ayarı, 10 saniye ileri/geri sarma rocker tuşları ve F11 tam ekran tuşu parmaklarınızın ucunda.",
-      badge: "ERGONOMİK DOKUNSAL",
+        "Instant one-tap launchers for YouTube, Netflix, and Spotify. Dual tactile volume & 10s scrub rockers, plus instant F11 theater mode.",
+      badge: "TACTILE HARDWARE",
       color: "from-blue-500/20 to-[#00e5ff]/20",
       accent: "#00e5ff",
       icon: Tv,
       colSpan: "lg:col-span-7",
     },
     {
-      title: "Dinamik Morphing Cam Trackpad",
+      title: "Dynamic Morphing Glass Trackpad",
       description:
-        "Ortadaki alana dokunduğunuzda anında 1000Hz tepki süreli devasa bir cam trackpad'e dönüşür. Çift parmak kaydırma ve hassas imleç ivmelenmesi.",
-      badge: "SUB-3MS TEPKİ",
+        "Touch the center disc and watch it fluidly expand into a massive 1000Hz precision glass trackpad with smooth acceleration and two-finger scrolling.",
+      badge: "SUB-3MS RESPONSE",
       color: "from-emerald-500/20 to-[#00e676]/20",
       accent: "#00e676",
       icon: MousePointer,
       colSpan: "lg:col-span-5",
     },
     {
-      title: "Wake-on-LAN (Kapalı PC'yi Aç)",
+      title: "Wake-on-LAN (Turn On Sleeping PC)",
       description:
-        "Bilgisayarınız tamamen kapalı veya uyku modundayken, yatağınızdan kalkmadan tek tuşla UDP 9 Magic Packet göndererek bilgisayarınızı başlatın.",
-      badge: "PRO ÖZELLİK",
+        "Even when your PC is completely turned off or in sleep mode, power it on right from bed via UDP Port 9 Magic Packet broadcast.",
+      badge: "PRO CAPABILITY",
       color: "from-amber-500/20 to-[#ff9100]/20",
       accent: "#ff9100",
       icon: Zap,
       colSpan: "lg:col-span-4",
     },
     {
-      title: "Windows Hello Parmak İzi ile Kilit Açma",
+      title: "Windows Hello Biometric Unlock",
       description:
-        "Telefondaki biyometrik parmak izinizle Windows oturumunuzu 500 milisaniyede açın. PIN yazma derdine son.",
-      badge: "BİYOMETRİK GÜVENLİK",
+        "Use your phone's fingerprint sensor to unlock your Windows desktop in 500 milliseconds. No typing 4-digit PINs in the dark.",
+      badge: "BIOMETRIC SECURITY",
       color: "from-cyan-500/20 to-blue-500/20",
       accent: "#00e5ff",
       icon: Fingerprint,
       colSpan: "lg:col-span-4",
     },
     {
-      title: "Canlı Ekran Önizleme (Mini Mirror)",
+      title: "Live Mini Screen Mirror",
       description:
-        "Trackpad'in tam arkasında PC ekranınızı canlı olarak izleyin. TV ekranına kafanızı çevirmeden masaüstünüzde ne olduğunu takip edin.",
-      badge: "GERÇEK ZAMANLI GDI",
+        "Stream your desktop screen live right underneath the trackpad surface at 60fps. Navigate without straining your neck toward the TV.",
+      badge: "REAL-TIME GDI FEED",
       color: "from-purple-500/20 to-pink-500/20",
       accent: "#c084fc",
       icon: MonitorPlay,
       colSpan: "lg:col-span-4",
     },
     {
-      title: "Gyroscope Air Mouse (Sihirli Kumanda)",
+      title: "Gyroscope Air Mouse (Magic Wand)",
       description:
-        "Telefonunuzu havada sihirli bir asa gibi hareket ettirin. Jiroskopik açısal hız algısı ve 0.12° titreme filtresiyle imleci havadan yönetin.",
-      badge: "HAVADAN KONTROL",
+        "Move your phone through the air like a magic wand. Built-in angular rate integration and 0.12° deadzone filtering eliminate hand jitters.",
+      badge: "MOTION SENSING",
       color: "from-indigo-500/20 to-blue-500/20",
       accent: "#818cf8",
       icon: Compass,
       colSpan: "lg:col-span-6",
     },
     {
-      title: "Mekanik Sesli & Dokunsal Tam Klavye",
+      title: "Acoustic Mechanical Keyboard",
       description:
-        "Gerçekçi mekanik switch ses efektleri (Blue Switch), Türkçe Q karakter desteği, Alt+Tab, Win tuşu, sesli dikte ve metin gönderme.",
-      badge: "HAPTİK & AKUSTİK",
+        "Full keyboard layout with realistic mechanical Blue Switch click acoustics, LRA haptic pulses, Alt+Tab, and voice dictation.",
+      badge: "HAPTIC & ACOUSTIC",
       color: "from-teal-500/20 to-emerald-500/20",
       accent: "#2dd4bf",
       icon: Keyboard,
@@ -90,22 +87,22 @@ export default function FeatureGrid() {
   ];
 
   return (
-    <section id="ozellikler" className="py-28 relative overflow-hidden bg-black">
+    <section id="features" className="py-28 relative overflow-hidden bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-[#00e5ff]/30 mb-4">
             <Sparkles className="w-3.5 h-3.5 text-[#00e5ff]" />
             <span className="text-xs font-semibold text-[#00e5ff] uppercase tracking-wider">
-              Mühendislik Harikası Detaylar
+              Engineering Highlights
             </span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">
-            Her Detayı Konforunuz İçin Tasarlandı.
+            Engineered for Peak Comfort &amp; Power.
           </h2>
           <p className="text-zinc-400 text-base sm:text-lg leading-relaxed">
-            TouchBase, sadece bir uzaktan kumanda değil; bilgisayarınızı ev eğlencesinin
-            merkezi haline getiren yüksek performanslı bir kontrol istasyonudur.
+            TouchBase is not just another mouse pointer app—it turns your computer into
+            an effortless home entertainment command center.
           </p>
         </div>
 

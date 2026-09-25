@@ -1,34 +1,34 @@
 "use client";
 
 import React from "react";
-import { Check, X, ShieldAlert, Sparkles, BatteryCharging, Zap } from "lucide-react";
+import { Check, X, Sparkles, Zap } from "lucide-react";
 
 export default function WhyTouchBase() {
   const comparisons = [
     {
-      category: "Arayüz & Kullanılabilirlik",
-      others: "2012'den kalma gri buton karmaşası, karmaşık menüler",
-      touchbase: "Smart TV kumandası + Dinamik cam trackpad füzyonu",
+      category: "UI & Usability",
+      others: "Cluttered 2012-era gray buttons, ugly windows, and nested menus",
+      touchbase: "Smart TV remote ergonomics fused with a 1000Hz dynamic glass trackpad",
     },
     {
-      category: "Gelir & Fiyat Modeli",
-      others: "Her tıklamada video reklam veya aylık/yıllık fahiş abonelik",
-      touchbase: "Sıfır reklam! Bir kahve fiyatına ömür boyu öde, sonsuza dek kullan",
+      category: "Business Model",
+      others: "Aggressive full-screen video ads or costly monthly/yearly subscriptions",
+      touchbase: "Zero ads. Single coffee-price lifetime purchase—no recurring fees ever",
     },
     {
-      category: "Gecikme & İletişim",
-      others: "Veriyi harici internet sunucularından geçiren yüksek gecikmeli bulut",
-      touchbase: "%100 Yerel Wi-Fi WebSocket kanalıyla sub-3ms ışık hızı",
+      category: "Latency & Connectivity",
+      others: "High-latency traffic bounced through third-party internet cloud servers",
+      touchbase: "100% Local Wi-Fi WebSocket channel delivering sub-3ms ultra-low latency",
     },
     {
-      category: "Ekran & Batarya",
-      others: "Parlak beyaz temalarla telefonun pilini hızla tüketen ekranlar",
-      touchbase: "%100 Saf OLED siyahı (#000000) ile pikseller kapalı, sıfır pil kaybı",
+      category: "Battery & Display",
+      others: "Bright white themes draining your phone battery within hours",
+      touchbase: "100% Pure OLED Black (#000000) with disabled pixels for near-zero drain",
     },
     {
-      category: "Donanım Gücü",
-      others: "Sadece basit fare emülasyonu",
-      touchbase: "Wake-on-LAN (Kapalı PC'yi açma), Windows Hello parmak izi, Gyro Air Mouse",
+      category: "Hardware Power",
+      others: "Basic cursor emulation only",
+      touchbase: "Hardware Wake-on-LAN (UDP 9), biometric Windows Hello, and Gyro Air Mouse",
     },
   ];
 
@@ -39,15 +39,15 @@ export default function WhyTouchBase() {
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 mb-4">
             <Sparkles className="w-3.5 h-3.5 text-[#ff9100]" />
             <span className="text-xs font-semibold text-[#ff9100] uppercase tracking-wider">
-              Neden TouchBase?
+              Why TouchBase?
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
-            Eski Nesil Kumanda Uygulamalarını Unutun.
+            Forget Legacy, Clunky Remote Software.
           </h2>
           <p className="text-zinc-400 text-base sm:text-lg">
-            Pazardaki mevcut uzaktan kontrol yazılımlarının kullanıcıyı bezdiren
-            tüm sorunlarını kökten çözdük.
+            We engineered TouchBase from scratch to solve every single frustrating flaw
+            plaguing conventional remote control applications.
           </p>
         </div>
 
@@ -61,8 +61,8 @@ export default function WhyTouchBase() {
                   <X className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white">Geleneksel Uygulamalar</h3>
-                  <p className="text-xs text-zinc-400">Unified Remote, Remote Mouse vb.</p>
+                  <h3 className="text-lg font-bold text-white">Legacy Apps (2012 Era)</h3>
+                  <p className="text-xs text-zinc-400">Unified Remote, Remote Mouse, etc.</p>
                 </div>
               </div>
 
@@ -85,7 +85,7 @@ export default function WhyTouchBase() {
 
             <div className="mt-8 pt-4 border-t border-white/[0.08] text-center">
               <span className="text-xs text-red-400/80 font-medium">
-                Sürekli reklamlar, yüksek gecikme ve pil israfı
+                Aggressive video ads, high cloud latency, and battery drain
               </span>
             </div>
           </div>
@@ -105,10 +105,10 @@ export default function WhyTouchBase() {
                     <h3 className="text-lg font-bold text-white flex items-center gap-2">
                       TouchBase Pro
                       <span className="px-2 py-0.5 rounded-full bg-[#00e5ff]/20 text-[#00e5ff] text-[10px] font-extrabold uppercase">
-                        Yeni Nesil
+                        Next-Gen
                       </span>
                     </h3>
-                    <p className="text-xs text-[#00e5ff]">Mühendislik Harikası Deneyim</p>
+                    <p className="text-xs text-[#00e5ff]">Precision Engineered Experience</p>
                   </div>
                 </div>
               </div>
@@ -135,7 +135,7 @@ export default function WhyTouchBase() {
             <div className="mt-8 pt-4 border-t border-white/[0.08] text-center">
               <span className="text-xs text-[#00e676] font-semibold flex items-center justify-center gap-1.5">
                 <Zap className="w-3.5 h-3.5" />
-                Tek Seferlik Öde, Sonsuza Kadar Sahip Ol
+                Pay Once, Own Forever. Zero Ads.
               </span>
             </div>
           </div>

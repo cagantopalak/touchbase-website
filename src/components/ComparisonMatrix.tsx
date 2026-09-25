@@ -2,23 +2,25 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Check, X, Zap, Sparkles, Coffee, ShieldCheck, HelpCircle } from "lucide-react";
+import { Check, X, Sparkles, Coffee } from "lucide-react";
 
 export default function ComparisonMatrix() {
-  const [currency, setCurrency] = useState<"TRY" | "USD">("TRY");
+  const [currency, setCurrency] = useState<"USD" | "TRY">("USD");
 
   const plans = {
-    TRY: {
-      price: "₺89.99",
-      regularPrice: "₺149.99",
-      currencyLabel: "TL",
-      discountBadge: "%40 Lansman İndirimi",
-    },
     USD: {
       price: "$4.99",
       regularPrice: "$8.99",
       currencyLabel: "USD",
-      discountBadge: "40% OFF Launch",
+      discountBadge: "40% OFF Launch Special",
+      payOnce: "Single coffee price, own forever!",
+    },
+    TRY: {
+      price: "₺89.99",
+      regularPrice: "₺149.99",
+      currencyLabel: "TRY",
+      discountBadge: "%40 Lansman İndirimi",
+      payOnce: "Bir kahve fiyatına tek seferlik öde!",
     },
   };
 
@@ -26,113 +28,113 @@ export default function ComparisonMatrix() {
 
   const matrix = [
     {
-      feature: "Smart TV Kumanda Arayüzü",
+      feature: "Smart TV Remote Interface",
       free: true,
-      freeNote: "Tam Erişim",
+      freeNote: "Full Access",
       pro: true,
-      proNote: "Tam Erişim",
+      proNote: "Full Access",
       highlight: false,
     },
     {
-      feature: "Dinamik Cam Trackpad & Çoklu Dokunma",
+      feature: "Dynamic Glass Trackpad & Multi-touch",
       free: true,
-      freeNote: "Tam Erişim",
+      freeNote: "Full Access",
       pro: true,
-      proNote: "Tam Erişim",
+      proNote: "Full Access",
       highlight: false,
     },
     {
-      feature: "Medya Başlatıcılar (YouTube, Netflix, Spotify)",
+      feature: "Media Launchers (YouTube, Netflix, Spotify)",
       free: true,
-      freeNote: "Var",
+      freeNote: "Included",
       pro: true,
-      proNote: "Var",
+      proNote: "Included",
       highlight: false,
     },
     {
-      feature: "Ses & 10s Sarma Rocker Tuşları",
+      feature: "Master Volume & 10s Scrub Rocker Keys",
       free: true,
-      freeNote: "Var",
+      freeNote: "Included",
       pro: true,
-      proNote: "Var",
+      proNote: "Included",
       highlight: false,
     },
     {
-      feature: "Mekanik Sesli Klavye (Türkçe Q Tam Düzen)",
+      feature: "Acoustic Mechanical Keyboard (Full Layout)",
       free: true,
-      freeNote: "Var",
+      freeNote: "Included",
       pro: true,
-      proNote: "Var",
+      proNote: "Included",
       highlight: false,
     },
     {
-      feature: "OLED Obsidian Siyah Tema (#000000)",
+      feature: "OLED Obsidian Black Theme (#000000)",
       free: true,
-      freeNote: "Var",
+      freeNote: "Included",
       pro: true,
-      proNote: "Var",
+      proNote: "Included",
       highlight: false,
     },
     {
-      feature: "Windows Hello Kilit Açma",
+      feature: "Windows Hello Unlock",
       free: true,
-      freeNote: "4 Haneli PIN",
+      freeNote: "4-Digit PIN",
       pro: true,
-      proNote: "Ultra Hızlı Parmak İzi",
+      proNote: "Fingerprint & Instant",
       highlight: false,
     },
     {
-      feature: "Wake-on-LAN (Kapalı PC'yi Wi-Fi ile Açma)",
+      feature: "Wake-on-LAN (Boot Sleeping PC via Wi-Fi)",
       free: false,
-      freeNote: "Kilitli",
+      freeNote: "Locked",
       pro: true,
-      proNote: "Sınırsız (Tek Tıkla)",
+      proNote: "Unlimited (1-Click)",
       highlight: true,
     },
     {
-      feature: "Canlı Ekran Önizleme (Mini Screen Mirror)",
+      feature: "Live Screen Preview (Mini Screen Mirror)",
       free: false,
-      freeNote: "Kilitli",
+      freeNote: "Locked",
       pro: true,
-      proNote: "Sınırsız (Trackpad Altında)",
+      proNote: "Unlimited (Behind Trackpad)",
       highlight: true,
     },
     {
-      feature: "Gyroscope Air Mouse (Sihirli Kumanda)",
+      feature: "Gyroscope Air Mouse (Magic Wand Motion)",
       free: false,
-      freeNote: "Kilitli",
+      freeNote: "Locked",
       pro: true,
-      proNote: "Sınırsız (Havadan Kontrol)",
+      proNote: "Unlimited (Air Control)",
       highlight: true,
     },
     {
-      feature: "Stream Deck & Hızlı Makro Tuşları",
+      feature: "Stream Deck & Rapid Macro Directives",
       free: false,
-      freeNote: "Kilitli",
+      freeNote: "Locked",
       pro: true,
-      proNote: "Sınırsız (Snip, Mic Mute vb.)",
+      proNote: "Unlimited (Snip, Mic, Tab)",
       highlight: true,
     },
     {
-      feature: "Çoklu PC Yönetimi (Salon, Ofis, Masa)",
-      free: "1 Bilgisayar",
-      freeNote: "1 Cihaz",
+      feature: "Multi-PC Management (Living Room, Desk, Office)",
+      free: "1 Computer",
+      freeNote: "1 Device",
       pro: true,
-      proNote: "Sınırsız Bilgisayar",
+      proNote: "Unlimited Computers",
       highlight: true,
     },
     {
-      feature: "VIP Temalar (Titanium, Cyberpunk Neon)",
+      feature: "VIP Themes (Titanium, Cyberpunk Neon)",
       free: false,
-      freeNote: "Kilitli",
+      freeNote: "Locked",
       pro: true,
-      proNote: "Tüm Temalar Açık",
+      proNote: "All Themes Unlocked",
       highlight: true,
     },
   ];
 
   return (
-    <section id="karsilastirma" className="py-28 relative overflow-hidden bg-black">
+    <section id="pricing" className="py-28 relative overflow-hidden bg-black">
       {/* Background Lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-[#ff9100]/5 rounded-full blur-[170px] pointer-events-none -z-10" />
 
@@ -142,30 +144,19 @@ export default function ComparisonMatrix() {
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-[#ff9100]/30 mb-4">
             <Coffee className="w-3.5 h-3.5 text-[#ff9100]" />
             <span className="text-xs font-semibold text-[#ff9100] uppercase tracking-wider">
-              Abonelik Yok • Ömür Boyu Lisans
+              No Subscriptions • Lifetime License
             </span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">
-            Free ve PRO: İhtiyacınıza Göre Seçin.
+            Free vs. PRO: Pick What You Need.
           </h2>
           <p className="text-zinc-400 text-base sm:text-lg">
-            Temel uzaktan kumanda özelliklerini sonsuza kadar ücretsiz kullanın.
-            Wake-on-LAN, Canlı Ekran ve Air Mouse gibi gelişmiş donanım özelliklerine
-            bir kahve fiyatına ömür boyu sahip olun.
+            Enjoy foundational remote controls completely free forever. Unlock Wake-on-LAN,
+            live screen streaming, and Gyro Air Mouse for the price of a single coffee.
           </p>
 
           {/* Currency Toggle */}
           <div className="inline-flex items-center p-1 rounded-xl bg-[#14141c] border border-white/10 mt-8">
-            <button
-              onClick={() => setCurrency("TRY")}
-              className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                currency === "TRY"
-                  ? "bg-[#21212B] text-white shadow border border-white/15"
-                  : "text-zinc-400 hover:text-white"
-              }`}
-            >
-              Türkiye (TRY ₺)
-            </button>
             <button
               onClick={() => setCurrency("USD")}
               className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${
@@ -175,6 +166,16 @@ export default function ComparisonMatrix() {
               }`}
             >
               Global (USD $)
+            </button>
+            <button
+              onClick={() => setCurrency("TRY")}
+              className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                currency === "TRY"
+                  ? "bg-[#21212B] text-white shadow border border-white/15"
+                  : "text-zinc-400 hover:text-white"
+              }`}
+            >
+              Türkiye (TRY ₺)
             </button>
           </div>
         </div>
@@ -186,27 +187,27 @@ export default function ComparisonMatrix() {
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-extrabold uppercase tracking-widest text-zinc-400">
-                  ÜCRETSİZ KATMAN
+                  FREE TIER
                 </span>
                 <span className="px-2.5 py-1 rounded-full bg-white/5 text-[11px] text-zinc-300 font-semibold border border-white/10">
-                  Süresiz Ücretsiz
+                  Free Forever
                 </span>
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">TouchBase Free</h3>
               <p className="text-sm text-zinc-400 mb-6">
-                Temel medya kontrolü ve fare trackpad deneyimi için ihtiyacınız olan her şey.
+                All essential media playback and mouse trackpad controls to get started.
               </p>
               <div className="flex items-baseline gap-2 mb-6">
-                <span className="text-4xl font-extrabold text-white">₺0</span>
-                <span className="text-xs text-zinc-500 font-medium">Sonsuza kadar</span>
+                <span className="text-4xl font-extrabold text-white">$0</span>
+                <span className="text-xs text-zinc-500 font-medium">Forever</span>
               </div>
             </div>
 
             <Link
-              href="#indir"
+              href="#download"
               className="w-full py-3.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/15 text-sm font-bold text-white text-center transition-colors block"
             >
-              Ücretsiz Başla
+              Start Free
             </Link>
           </div>
 
@@ -221,7 +222,7 @@ export default function ComparisonMatrix() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-xs font-extrabold uppercase tracking-widest text-[#00e5ff]">
-                  ÖMÜR BOYU LİSANS (TEK SEFERLİK)
+                  LIFETIME LICENSE (ONE-TIME)
                 </span>
               </div>
               <h3 className="text-2xl font-bold text-white mb-2 flex items-center gap-2">
@@ -231,7 +232,7 @@ export default function ComparisonMatrix() {
                 </span>
               </h3>
               <p className="text-sm text-zinc-300 mb-6">
-                Wake-on-LAN, Canlı Ekran, Air Mouse ve Stream Deck ile tam donanım kontrolü.
+                Wake-on-LAN, Live Screen Mirror, Gyro Air Mouse, Stream Deck, and Multi-PC management.
               </p>
               <div className="flex items-baseline gap-3 mb-2">
                 <span className="text-4xl sm:text-5xl font-extrabold text-[#00e5ff]">
@@ -241,19 +242,19 @@ export default function ComparisonMatrix() {
                   {currentPlan.regularPrice}
                 </span>
                 <span className="text-xs text-[#00e676] font-bold">
-                  Bir kez öde, ömür boyu kullan!
+                  {currentPlan.payOnce}
                 </span>
               </div>
               <p className="text-xs text-zinc-400 mb-6">
-                * Abonelik yoktur. 3 günlük ücretsiz deneme dahildir.
+                * Zero subscriptions. Includes 3-day full free trial on Google Play.
               </p>
             </div>
 
             <Link
-              href="#indir"
+              href="#download"
               className="w-full py-4 rounded-2xl bg-gradient-to-r from-[#00e5ff] to-[#00b4d8] text-black font-extrabold text-sm text-center shadow-[0_0_25px_rgba(0,229,255,0.3)] hover:shadow-[0_0_35px_rgba(0,229,255,0.5)] transition-all block hover:scale-[1.01]"
             >
-              PRO&apos;yu Google Play&apos;den Al (3 Gün Ücretsiz Dene)
+              Get PRO on Google Play (3-Day Free Trial)
             </Link>
           </div>
         </div>
@@ -265,10 +266,10 @@ export default function ComparisonMatrix() {
               <thead>
                 <tr className="border-b border-white/10 bg-white/[0.02]">
                   <th className="py-5 px-6 text-xs font-bold text-zinc-400 uppercase tracking-wider">
-                    Özellik &amp; Kabiliyet
+                    Feature &amp; Capability
                   </th>
                   <th className="py-5 px-6 text-xs font-bold text-zinc-300 uppercase tracking-wider text-center w-40">
-                    Free (Ücretsiz)
+                    Free Tier
                   </th>
                   <th className="py-5 px-6 text-xs font-bold text-[#00e5ff] uppercase tracking-wider text-center w-52 bg-[#00e5ff]/5">
                     TouchBase PRO

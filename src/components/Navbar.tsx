@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Download, Menu, X, ShieldCheck, ArrowRight } from "lucide-react";
+import { Download, Menu, X, ArrowRight } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -61,52 +61,52 @@ export default function Navbar() {
         {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
           <Link
-            href="#ozellikler"
+            href="#features"
             className="hover:text-white transition-colors duration-200"
           >
-            Özellikler
+            Features
           </Link>
           <Link
-            href="#canli-demo"
-            className="hover:text-[#00e5ff] transition-colors duration-200 flex items-center gap-1"
+            href="#live-demo"
+            className="hover:text-[#00e5ff] transition-colors duration-200 flex items-center gap-1.5"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#00e5ff] animate-ping"></span>
-            Canlı Demo
+            Live Demo
           </Link>
           <Link
-            href="#galeri"
+            href="#gallery"
             className="hover:text-white transition-colors duration-200"
           >
-            Galeri
+            Gallery
           </Link>
           <Link
-            href="#karsilastirma"
+            href="#pricing"
             className="hover:text-white transition-colors duration-200"
           >
             Free vs PRO
           </Link>
           <Link
-            href="#nasil-calisir"
+            href="#setup"
             className="hover:text-white transition-colors duration-200"
           >
-            Kurulum
+            Setup
           </Link>
           <Link
-            href="#sss"
+            href="#faq"
             className="hover:text-white transition-colors duration-200"
           >
-            SSS
+            FAQ
           </Link>
         </nav>
 
         {/* Action Button */}
         <div className="hidden sm:flex items-center gap-3">
           <Link
-            href="#indir"
+            href="#download"
             className="squircle-button px-5 py-2.5 rounded-2xl text-xs font-semibold text-white flex items-center gap-2 group hover:text-[#00e5ff]"
           >
             <Download className="w-4 h-4 text-[#00e5ff] group-hover:translate-y-0.5 transition-transform" />
-            <span>Hemen İndir</span>
+            <span>Download</span>
           </Link>
         </div>
 
@@ -114,7 +114,7 @@ export default function Navbar() {
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="md:hidden p-2 rounded-xl bg-zinc-900/80 border border-white/10 text-zinc-300 hover:text-white"
-          aria-label="Menüyü Aç"
+          aria-label="Open Menu"
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -124,56 +124,56 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden bg-black/95 backdrop-blur-2xl border-b border-white/10 px-6 py-6 flex flex-col gap-4 animate-in slide-in-from-top-2">
           <Link
-            href="#ozellikler"
+            href="#features"
             onClick={() => setMobileMenuOpen(false)}
             className="text-base text-zinc-300 hover:text-white py-2"
           >
-            Özellikler
+            Features
           </Link>
           <Link
-            href="#canli-demo"
+            href="#live-demo"
             onClick={() => setMobileMenuOpen(false)}
             className="text-base text-[#00e5ff] py-2 flex items-center gap-2"
           >
             <span className="w-2 h-2 rounded-full bg-[#00e5ff]"></span>
-            Canlı Demo
+            Live Demo
           </Link>
           <Link
-            href="#galeri"
+            href="#gallery"
             onClick={() => setMobileMenuOpen(false)}
             className="text-base text-zinc-300 hover:text-white py-2"
           >
-            Galeri & Video
+            Gallery &amp; Video
           </Link>
           <Link
-            href="#karsilastirma"
+            href="#pricing"
             onClick={() => setMobileMenuOpen(false)}
             className="text-base text-zinc-300 hover:text-white py-2"
           >
-            Free vs PRO Karşılaştırması
+            Free vs PRO Comparison
           </Link>
           <Link
-            href="#nasil-calisir"
+            href="#setup"
             onClick={() => setMobileMenuOpen(false)}
             className="text-base text-zinc-300 hover:text-white py-2"
           >
-            Kurulum (60 Saniye)
+            Setup in 60s
           </Link>
           <Link
-            href="#sss"
+            href="#faq"
             onClick={() => setMobileMenuOpen(false)}
             className="text-base text-zinc-300 hover:text-white py-2"
           >
-            Sıkça Sorulan Sorular
+            Frequently Asked Questions
           </Link>
           <div className="pt-4 border-t border-white/10 flex flex-col gap-2">
             <Link
-              href="#indir"
+              href="#download"
               onClick={() => setMobileMenuOpen(false)}
               className="w-full py-3 rounded-xl bg-gradient-to-r from-[#00e5ff] to-[#00b4d8] text-black font-bold text-center flex items-center justify-center gap-2"
             >
               <Download className="w-5 h-5" />
-              <span>Uygulamayı & Sunucuyu İndir</span>
+              <span>Download App &amp; Host Server</span>
             </Link>
           </div>
         </div>

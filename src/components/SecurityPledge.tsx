@@ -6,27 +6,27 @@ import { ShieldCheck, Lock, Wifi, EyeOff, Cpu, Terminal } from "lucide-react";
 export default function SecurityPledge() {
   const points = [
     {
-      title: "%100 Yerel İletişim",
+      title: "100% Local Network",
       description:
-        "Tüm komutlar ve veri paketleri yalnızca evinizdeki yerel Wi-Fi yönlendiricisi üzerinden akar. Dış internete ihtiyaç duymaz.",
+        "All commands and packets travel strictly inside your home Wi-Fi router. Works seamlessly even if your internet connection goes down.",
       icon: Wifi,
     },
     {
-      title: "Sıfır Bulut & Sıfır Takip",
+      title: "Zero Cloud & Zero Telemetry",
       description:
-        "Sunucularımızda hiçbir kullanıcı hesabı, e-posta veya parola tutulmaz. Tuş vuruşlarınız veya ekran görüntüleriniz asla dışarı sızmaz.",
+        "We do not store passwords, telemetry, or user accounts. What you type and what you watch remains 100% private to you.",
       icon: EyeOff,
     },
     {
-      title: "Biyometrik Yerel Şifreleme",
+      title: "Biometric Hardware Vault",
       description:
-        "Windows Hello kilidi açarken kullanılan PIN veya parmak izi verileri telefonunuzun yerel güvenli donanımında (Keystore) saklanır.",
+        "Windows Hello PIN and biometric tokens are stored safely inside your Android device's hardware Keystore.",
       icon: Lock,
     },
     {
-      title: "Hafif ve Açık Mimari",
+      title: "Transparent Lightweight Core",
       description:
-        "Windows sunucusu şeffaf bir Node.js ve Win32 SendInput motorudur. Bilgisayarınızı yavaşlatmaz, arka planda <%0.05 CPU tüketir.",
+        "The Windows host is an open, transparent Node.js and Win32 SendInput engine that never bogs down your PC (<0.05% CPU).",
       icon: Cpu,
     },
   ];
@@ -41,24 +41,24 @@ export default function SecurityPledge() {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00e676]/10 border border-[#00e676]/30 mb-4">
                 <ShieldCheck className="w-4 h-4 text-[#00e676]" />
                 <span className="text-xs font-bold text-[#00e676] uppercase tracking-wider">
-                  Mühendislik Güvencesi
+                  Engineering Privacy Pledge
                 </span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4 leading-tight">
-                Verileriniz Evinizin Dışına Asla Çıkmaz.
+                Your Data Never Leaves Your Local Network.
               </h2>
 
               <p className="text-zinc-400 text-sm sm:text-base leading-relaxed mb-6">
-                TouchBase, gizlilik odaklı modern mühendislik standartlarıyla inşa edildi.
-                Diğer ticari uzaktan kumanda araçlarının aksine, verilerinizi üçüncü taraf
-                bulut sunucularından dolaştırmaz.
+                TouchBase is built with privacy-first engineering standards. Unlike commercial
+                remote desktop tools, your keystrokes, biometric credentials, and screen frames
+                are never relayed through external cloud servers.
               </p>
 
               <div className="p-4 rounded-2xl bg-black/60 border border-white/10 flex items-center gap-3">
                 <Terminal className="w-5 h-5 text-[#00e5ff] shrink-0" />
                 <p className="text-xs font-mono text-zinc-300">
-                  Protokol: ws://192.168.x.x:38472 • UDP Port 9 Magic Packet
+                  Protocol: ws://192.168.x.x:38472 • UDP Port 9 Magic Packet
                 </p>
               </div>
             </div>

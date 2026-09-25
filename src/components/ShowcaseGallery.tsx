@@ -9,7 +9,6 @@ import {
   Settings,
   Play,
   Film,
-  Maximize2,
   CheckCircle,
 } from "lucide-react";
 
@@ -20,58 +19,58 @@ export default function ShowcaseGallery() {
   const tabs = [
     {
       id: "remote" as const,
-      label: "Smart TV Kumandası",
+      label: "Smart TV Remote",
       icon: Smartphone,
-      title: "Obsidian Tactile Kumanda Arayüzü",
+      title: "Obsidian Tactile Remote Interface",
       description:
-        "YouTube, Netflix ve Spotify için özel başlatıcılar, çift taraflı ses ve sarma sütunları, ortada ışıltılı Master Play/Pause mücevher butonu.",
+        "One-touch quick launchers for YouTube, Netflix, and Spotify, flanked by dual volume and seek rocker columns with an illuminated Master Play/Pause jewel in the center.",
       image: "/images/remote_tactile.png",
       bullets: [
-        "100% Saf OLED Siyahı (#000000) ile sıfır pil tüketimi",
-        "Dokunsal squircle tuşlar ve LRA titreşim motoru desteği",
-        "Sub-3ms ışık hızında WebSocket bağlantısı",
+        "100% Pure OLED Black (#000000) for zero battery drain",
+        "Tactile squircle buttons backed by LRA haptic pulses",
+        "Sub-3ms ultra-low latency WebSocket streaming",
       ],
     },
     {
       id: "trackpad" as const,
-      label: "Dinamik Cam Trackpad",
+      label: "Dynamic Trackpad",
       icon: MousePointer,
-      title: "1000Hz Hassasiyetli Dinamik Trackpad",
+      title: "1000Hz Precision Dynamic Trackpad",
       description:
-        "Dokunduğunuzda tüm ekranı kaplayan pürüzsüz cam trackpad. Akıcı imleç ivmelenmesi, iki parmakla kaydırma ve altta çift tıklama butonları.",
+        "Fluidly transforms into a massive glass trackpad upon touch. Natural cursor acceleration curve, two-finger gesture scrolling, and split physical click zones.",
       image: "/images/dynamic_trackpad.png",
       bullets: [
-        "Gecikmesiz imleç takibi ve akıllı ivmelenme eğrisi",
-        "Canlı Ekran Önizleme (Mini Screen Mirror) desteği",
-        "Altta bölünmüş fiziksel Sol & Sağ tık alanları",
+        "Lag-free sub-pixel cursor tracking and inertia curves",
+        "Real-time Live Mini Screen Mirror under the glass",
+        "Divided physical Left and Right click trigger pads",
       ],
     },
     {
       id: "settings" as const,
-      label: "Ayarlar & Özelleştirme",
+      label: "Hardware Preferences",
       icon: Settings,
-      title: "Kişiselleştirilebilir Donanım Ayarları",
+      title: "Customizable Hardware Controls",
       description:
-        "Haptik titreşim şiddeti, fare DPI hassasiyeti, Wake-on-LAN MAC adresi yönetimi ve VIP temalar tek bir sade menüde.",
+        "Calibrate tactile haptic strength, cursor DPI sensitivity, Wake-on-LAN MAC address targets, and unlock VIP theme palettes in one clean interface.",
       image: "/images/settings_screen.png",
       bullets: [
-        "Windows Hello parmak izi & 4 haneli PIN yönetimi",
-        "Otomatik başlatma ve sessiz arka plan çalışma modu",
-        "Titanium ve Cyberpunk VIP tema seçenekleri",
+        "Windows Hello fingerprint & 4-digit PIN management",
+        "Silent background autostart on Windows boot",
+        "Titanium and Cyberpunk VIP aesthetic themes",
       ],
     },
     {
       id: "video" as const,
-      label: "Video & Tanıtım Vitrini",
+      label: "Video Demo Showcase",
       icon: Film,
-      title: "TouchBase Canlı Kullanım Deneyimi",
+      title: "TouchBase Live In-Action",
       description:
-        "Uygulamanın yatakta ve koltukta kullanımını, tepki süresini ve ergonomik geçişlerini yakından inceleyin.",
+        "Experience the effortless one-handed ergonomics from bed, sub-3ms latency, and fluid trackpad morphing in our video showcase.",
       image: "/images/remote_tactile.png",
       bullets: [
-        "Tek elle zahmetsiz kullanım ergonomisi (Thumb Zone)",
-        "PC kapalıyken Wake-on-LAN ile anında açılış",
-        "Windows masaüstü kontrolünde sıfır takılma",
+        "Calibrated for the natural Thumb Zone of modern phones",
+        "Instant PC boot-up from cold sleep with Wake-on-LAN",
+        "Zero-stutter desktop control across multiple monitors",
       ],
     },
   ];
@@ -79,7 +78,7 @@ export default function ShowcaseGallery() {
   const currentTab = tabs.find((t) => t.id === activeTab) || tabs[0];
 
   return (
-    <section id="galeri" className="py-28 relative overflow-hidden bg-black/90">
+    <section id="gallery" className="py-28 relative overflow-hidden bg-black/90">
       {/* Background Lighting */}
       <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-[#00e5ff]/5 rounded-full blur-[160px] pointer-events-none -z-10" />
 
@@ -89,15 +88,15 @@ export default function ShowcaseGallery() {
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-[#00e5ff]/30 mb-4">
             <Sparkles className="w-3.5 h-3.5 text-[#00e5ff]" />
             <span className="text-xs font-semibold text-[#00e5ff] uppercase tracking-wider">
-              Arayüz &amp; Video Vitrini
+              Interface &amp; Video Showcase
             </span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">
-            Göz Alıcı Tasarım, Eşsiz Mühendislik.
+            Striking Visuals. Precision Ergonomics.
           </h2>
           <p className="text-zinc-400 text-base sm:text-lg">
-            TouchBase&apos;in her pikseli karanlık odalarda gözünüzü yormamak ve
-            elinizde gerçek bir donanım kumandası hissi uyandırmak için çizildi.
+            Every single pixel of TouchBase was calibrated for dark home theater rooms and
+            tactile thumb comfort.
           </p>
         </div>
 
@@ -153,7 +152,7 @@ export default function ShowcaseGallery() {
                       <button
                         onClick={() => setIsPlayingVideo(true)}
                         className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-[#00e5ff] to-[#00e676] p-1 shadow-[0_0_40px_rgba(0,229,255,0.5)] hover:scale-110 active:scale-95 transition-all mb-4 group/btn"
-                        aria-label="Videoyu Başlat"
+                        aria-label="Play Video"
                       >
                         <div className="w-full h-full rounded-full bg-[#161622] flex items-center justify-center text-white group-hover/btn:text-[#00e5ff] transition-colors">
                           <Play className="w-10 h-10 fill-current ml-1" />
@@ -161,11 +160,11 @@ export default function ShowcaseGallery() {
                       </button>
 
                       <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
-                        TouchBase Tanıtım &amp; Özellik Videosu
+                        TouchBase Official Video Showcase
                       </h3>
                       <p className="text-xs sm:text-sm text-zinc-400 max-w-md">
-                        Smart TV kumandası ergonomisini, 1000Hz cam trackpad geçişini
-                        ve Wake-on-LAN gücünü izleyin.
+                        Watch the Smart TV remote layout, 1000Hz trackpad glide, and
+                        instant Wake-on-LAN power in real-time action.
                       </p>
 
                       <div className="flex items-center gap-3 mt-4">
@@ -173,18 +172,18 @@ export default function ShowcaseGallery() {
                           1080p 60FPS
                         </span>
                         <span className="px-3 py-1 rounded-full bg-[#00e676]/15 text-[11px] font-mono text-[#00e676] border border-[#00e676]/30">
-                          Ultra Düşük Gecikme
+                          Sub-3ms Latency
                         </span>
                       </div>
                     </div>
                   </>
                 ) : (
-                  /* Video Playing State Simulation / HTML5 Video Holder */
+                  /* Video Playing State Simulation */
                   <div className="w-full h-full flex flex-col items-center justify-center p-8 bg-black">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-3 h-3 rounded-full bg-red-500 animate-ping"></div>
                       <span className="text-sm font-bold text-zinc-300">
-                        Canlı Demo Yayını Oynatılıyor...
+                        Live Demonstration Playing...
                       </span>
                     </div>
 
@@ -201,7 +200,7 @@ export default function ShowcaseGallery() {
                       onClick={() => setIsPlayingVideo(false)}
                       className="mt-6 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-semibold text-white transition-colors"
                     >
-                      Durdur / Başa Dön
+                      Reset / Back to Preview
                     </button>
                   </div>
                 )}
@@ -213,7 +212,7 @@ export default function ShowcaseGallery() {
               {/* Text & Bullets (Left) */}
               <div className="lg:col-span-6 flex flex-col">
                 <span className="text-xs font-extrabold uppercase tracking-widest text-[#00e5ff] mb-2">
-                  RESMİ EKRAN GÖRÜNTÜSÜ
+                  OFFICIAL SCREEN CAPTURE
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-4">
                   {currentTab.title}
@@ -235,11 +234,11 @@ export default function ShowcaseGallery() {
                   <div className="flex items-center gap-2">
                     <div className="w-2.5 h-2.5 rounded-full bg-[#00e5ff]"></div>
                     <span className="text-xs font-mono text-zinc-300">
-                      Çözünürlük: OLED Native 1080p
+                      Display: Native OLED 1080p
                     </span>
                   </div>
                   <span className="text-xs font-mono text-[#00e676]">
-                    %100 Vektörel Hissiyat
+                    100% Vector Tactile
                   </span>
                 </div>
               </div>

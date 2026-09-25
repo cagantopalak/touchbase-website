@@ -1,52 +1,52 @@
 "use client";
 
 import React from "react";
-import { Download, Smartphone, Wifi, ArrowRight, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { Download, Smartphone, Wifi, CheckCircle2 } from "lucide-react";
 
 export default function HowItWorks() {
   const steps = [
     {
       step: "01",
-      title: "Windows Sunucusunu İndirin",
+      title: "Download Windows Host",
       description:
-        "Siteden TouchBase Windows paketini indirin. start_server.bat dosyasına çift tıklayın. Arka planda 15MB RAM ile sessizce çalışır.",
+        "Download the TouchBase Windows package. Double-click start_server.bat. It idles silently in the background consuming <15MB RAM.",
       icon: Download,
-      badge: "Sıfır Kurulum",
+      badge: "Zero Install Needed",
     },
     {
       step: "02",
-      title: "Telefonunuza TouchBase'i Kurun",
+      title: "Install TouchBase on Phone",
       description:
-        "Google Play Store'dan veya doğrudan APK bağlantımızdan telefonunuza yükleyin. Üyelik veya e-posta kaydı kesinlikle gerekmez.",
+        "Install from Google Play Store or download our direct APK. No account creation, passwords, or emails required.",
       icon: Smartphone,
-      badge: "Kayıt / Üyelik Yok",
+      badge: "No Account / Frictionless",
     },
     {
       step: "03",
-      title: "Otomatik Eşleşin & Yönetin",
+      title: "Auto-Pair & Control",
       description:
-        "Aynı Wi-Fi ağındayken TouchBase bilgisayarınızı otomatik bulur. IP adresi yazmadan 2ms tepki süresiyle kontrol etmeye başlayın.",
+        "As long as you are on the same Wi-Fi, TouchBase discovers your computer automatically. No typing IP addresses or opening router ports.",
       icon: Wifi,
-      badge: "Otomatik Keşif",
+      badge: "Automatic Discovery",
     },
   ];
 
   return (
-    <section id="nasil-calisir" className="py-24 relative overflow-hidden bg-black/80">
+    <section id="setup" className="py-24 relative overflow-hidden bg-black/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 mb-4">
             <span className="w-2 h-2 rounded-full bg-[#00e676]"></span>
             <span className="text-xs font-semibold text-zinc-300 uppercase tracking-wider">
-              60 Saniyede Kurulum
+              60-Second Setup
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
-            3 Kolay Adımda Hazırsınız.
+            Up and Running in 3 Simple Steps.
           </h2>
           <p className="text-zinc-400 text-base sm:text-lg">
-            Hiçbir karmaşık port yönlendirme, IP yapılandırması veya hesap açma derdi yok.
+            No complex port forwarding, manual IP entry, or router configuration needed.
           </p>
         </div>
 
@@ -85,7 +85,7 @@ export default function HowItWorks() {
 
                 <div className="mt-8 pt-4 border-t border-white/[0.06] flex items-center gap-2 text-xs font-semibold text-zinc-400">
                   <CheckCircle2 className="w-4 h-4 text-[#00e5ff]" />
-                  <span>Anında Çalışır</span>
+                  <span>Instant Response</span>
                 </div>
               </div>
             );

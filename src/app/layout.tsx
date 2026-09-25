@@ -16,18 +16,17 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://touchbase-website.vercel.app"),
-  title: "TouchBase Pro — PC Remote Controller | Akıllı TV Kumandası & Dinamik Trackpad",
+  title: "TouchBase Pro — PC Remote Controller | Smart TV Remote & Dynamic Trackpad",
   description:
-    "Windows bilgisayarınızı yatağınızdan veya koltuğunuzdan Android telefonunuzla TV kumandası ergonomisinde yönetin. 1000Hz cam trackpad, Wake-on-LAN, parmak iziyle PC kilit açma, sıfır bulut, sub-3ms ultra düşük gecikme.",
+    "Control your Windows PC from bed or couch with the ergonomics of a physical Smart TV remote. 1000Hz glass trackpad, Wake-on-LAN, Windows Hello fingerprint unlock, zero cloud, sub-3ms ultra-low latency.",
   keywords: [
     "TouchBase",
     "PC Remote Controller",
-    "Bilgisayar Uzaktan Kumanda",
-    "Android PC Remote",
+    "Windows Remote Control Android",
     "Smart TV Remote PC",
-    "Wake on LAN Android",
-    "Windows Hello Fingerprint Unlock",
-    "Air Mouse Gyroscope",
+    "Wake on LAN Android App",
+    "Windows Hello Fingerprint Unlock Remote",
+    "Gyroscope Air Mouse PC",
     "Stream Deck Alternative",
   ],
   authors: [{ name: "TouchBase Systems" }],
@@ -39,11 +38,11 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "tr_TR",
+    locale: "en_US",
     url: "https://touchbase-website.vercel.app",
     title: "TouchBase Pro — PC Remote Controller",
     description:
-      "Yatağından veya koltuğundan PC'ni gerçek bir Smart TV kumandası gibi yönet. Sıfır bulut, sub-3ms yerel Wi-Fi, ömür boyu tek seferlik lisans.",
+      "Control your Windows PC from bed or couch like a physical Smart TV remote. Zero cloud, sub-3ms local Wi-Fi, lifetime one-time license.",
     siteName: "TouchBase Pro",
     images: [
       {
@@ -58,7 +57,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "TouchBase Pro — PC Remote Controller",
     description:
-      "Bilgisayarını Android telefonundan gerçek bir TV kumandası ergonomisinde kontrol et. 100% Yerel Wi-Fi, sub-3ms tepki süresi.",
+      "Transform your Android phone into an ergonomic Smart TV remote and 1000Hz glass trackpad for Windows. 100% Local Wi-Fi, sub-3ms response.",
     images: ["/images/remote_tactile.png"],
   },
 };
@@ -69,7 +68,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="tr" className={`dark ${inter.variable} scroll-smooth`}>
+    <html lang="en" className={`dark ${inter.variable} scroll-smooth`}>
       <body className="bg-black text-[#e4e1e7] min-h-screen flex flex-col antialiased selection:bg-[#00e5ff] selection:text-black">
         {children}
       </body>

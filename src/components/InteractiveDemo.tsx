@@ -3,19 +3,15 @@
 import React, { useState, useRef } from "react";
 import {
   Volume2,
-  VolumeX,
-  Volume1,
   Play,
   Pause,
   FastForward,
   Rewind,
   MousePointer,
   Tv,
-  Keyboard,
   Sparkles,
   Fingerprint,
   Power,
-  RotateCcw,
   Plus,
   Minus,
 } from "lucide-react";
@@ -24,7 +20,7 @@ export default function InteractiveDemo() {
   const [activeTab, setActiveTab] = useState<"remote" | "trackpad">("remote");
   const [isPlaying, setIsPlaying] = useState(true);
   const [volume, setVolume] = useState(65);
-  const [feedback, setFeedback] = useState("Sistem Hazır • CAGAN-PC Bağlı");
+  const [feedback, setFeedback] = useState("System Ready • CAGAN-PC Paired");
   const [cursorPos, setCursorPos] = useState({ x: 50, y: 50 });
   const [clickEffect, setClickEffect] = useState<string | null>(null);
 
@@ -40,23 +36,23 @@ export default function InteractiveDemo() {
     const x = Math.round(((e.clientX - rect.left) / rect.width) * 100);
     const y = Math.round(((e.clientY - rect.top) / rect.height) * 100);
     setCursorPos({ x, y });
-    setFeedback(`İmleç Hareketi: X:${x}% Y:${y}% (Sub-2ms)`);
+    setFeedback(`Cursor Stream: X:${x}% Y:${y}% (Sub-2ms)`);
   };
 
   const handleLeftClick = () => {
     setClickEffect("left");
-    setFeedback("Sol Tık Gönderildi (L-CLICK)");
+    setFeedback("Dispatched Left Click (L-CLICK)");
     setTimeout(() => setClickEffect(null), 300);
   };
 
   const handleRightClick = () => {
     setClickEffect("right");
-    setFeedback("Sağ Tık Gönderildi (R-CLICK)");
+    setFeedback("Dispatched Right Click (R-CLICK)");
     setTimeout(() => setClickEffect(null), 300);
   };
 
   return (
-    <section id="canli-demo" className="py-24 relative overflow-hidden bg-black">
+    <section id="live-demo" className="py-24 relative overflow-hidden bg-black">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#00e5ff]/5 rounded-full blur-[140px] pointer-events-none -z-10" />
 
@@ -66,16 +62,15 @@ export default function InteractiveDemo() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-[#00e5ff]/30 mb-4">
             <Sparkles className="w-3.5 h-3.5 text-[#00e5ff]" />
             <span className="text-xs font-semibold text-[#00e5ff] uppercase tracking-wider">
-              Tarayıcı İçi Deneyim
+              In-Browser Experience
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
-            İndirmeden Önce Dokunsal Hissiyatı Test Edin.
+            Feel the Tactile Ergonomics Before Installing.
           </h2>
           <p className="text-zinc-400 text-base sm:text-lg">
-            Aşağıdaki sanal kumanda ve trackpad ile etkileşime girin. Tuşlara basın,
-            trackpad üzerinde farenizi gezdirin ve sistemin nasıl anında tepki
-            verdiğini görün.
+            Interact with our virtual remote and morphing trackpad below. Click the tactile keys,
+            glide your cursor over the glass surface, and see how fast it responds.
           </p>
         </div>
 
@@ -86,7 +81,7 @@ export default function InteractiveDemo() {
             <button
               onClick={() => {
                 setActiveTab("remote");
-                triggerAction("Smart TV Kumanda Moduna Geçildi");
+                triggerAction("Switched to Smart TV Remote Mode");
               }}
               className={`flex-1 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 ${
                 activeTab === "remote"
@@ -95,12 +90,12 @@ export default function InteractiveDemo() {
               }`}
             >
               <Tv className="w-4 h-4 text-[#00e5ff]" />
-              <span>Smart TV Kumandası</span>
+              <span>Smart TV Remote</span>
             </button>
             <button
               onClick={() => {
                 setActiveTab("trackpad");
-                triggerAction("Dinamik Cam Trackpad Moduna Geçildi");
+                triggerAction("Switched to Dynamic Glass Trackpad Mode");
               }}
               className={`flex-1 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 ${
                 activeTab === "trackpad"
@@ -109,7 +104,7 @@ export default function InteractiveDemo() {
               }`}
             >
               <MousePointer className="w-4 h-4 text-[#00e676]" />
-              <span>Dinamik Trackpad</span>
+              <span>Dynamic Trackpad</span>
             </button>
           </div>
 
@@ -129,15 +124,15 @@ export default function InteractiveDemo() {
 
               <div className="flex items-center gap-2">
                 <button
-                  onClick={() => triggerAction("Biyometrik Windows Hello Doğrulandı! Masaüstü Açık.")}
-                  title="Windows Hello Kilit Aç"
+                  onClick={() => triggerAction("Biometric Windows Hello Clearance Granted! Desktop Unlocked.")}
+                  title="Windows Hello Unlock"
                   className="w-8 h-8 rounded-full bg-[#181822] border border-[#00e676]/30 flex items-center justify-center text-[#00e676] hover:scale-105 active:scale-95 transition-all"
                 >
                   <Fingerprint className="w-4 h-4" />
                 </button>
                 <button
-                  onClick={() => triggerAction("Wake-on-LAN Magic Paketi Gönderildi!")}
-                  title="Güç / Standby"
+                  onClick={() => triggerAction("Wake-on-LAN Magic Packet Dispatched! PC Powering On.")}
+                  title="Power / Standby"
                   className="w-8 h-8 rounded-full bg-[#181822] border border-[#ff3b30]/30 flex items-center justify-center text-[#ff3b30] hover:scale-105 active:scale-95 transition-all"
                 >
                   <Power className="w-4 h-4" />
@@ -151,7 +146,7 @@ export default function InteractiveDemo() {
                 {/* Media Launcher Row */}
                 <div className="grid grid-cols-4 gap-2">
                   <button
-                    onClick={() => triggerAction("YouTube Başlatıldı (Fullscreen)")}
+                    onClick={() => triggerAction("YouTube Launched (Theater Mode)")}
                     className="p-3 rounded-xl bg-[#181824] border border-white/10 hover:border-red-500/50 flex flex-col items-center justify-center gap-1 active:scale-95 transition-all group"
                   >
                     <div className="w-7 h-7 rounded-full bg-red-600/20 flex items-center justify-center text-red-500 group-hover:scale-110 transition-transform">
@@ -163,7 +158,7 @@ export default function InteractiveDemo() {
                   </button>
 
                   <button
-                    onClick={() => triggerAction("Netflix Başlatıldı")}
+                    onClick={() => triggerAction("Netflix Launched")}
                     className="p-3 rounded-xl bg-[#181824] border border-white/10 hover:border-red-600/50 flex flex-col items-center justify-center gap-1 active:scale-95 transition-all group"
                   >
                     <div className="w-7 h-7 rounded-full bg-red-700/20 flex items-center justify-center text-red-600 font-black text-xs group-hover:scale-110 transition-transform">
@@ -175,7 +170,7 @@ export default function InteractiveDemo() {
                   </button>
 
                   <button
-                    onClick={() => triggerAction("Spotify Açıldı")}
+                    onClick={() => triggerAction("Spotify Opened")}
                     className="p-3 rounded-xl bg-[#181824] border border-white/10 hover:border-emerald-500/50 flex flex-col items-center justify-center gap-1 active:scale-95 transition-all group"
                   >
                     <div className="w-7 h-7 rounded-full bg-emerald-500/20 flex items-center justify-center text-[#00e676] group-hover:scale-110 transition-transform">
@@ -187,14 +182,14 @@ export default function InteractiveDemo() {
                   </button>
 
                   <button
-                    onClick={() => triggerAction("F11 Tam Ekran Modu Açıldı/Kapatıldı")}
+                    onClick={() => triggerAction("F11 Fullscreen Mode Toggled")}
                     className="p-3 rounded-xl bg-[#181824] border border-white/10 hover:border-[#00e5ff]/50 flex flex-col items-center justify-center gap-1 active:scale-95 transition-all group"
                   >
                     <div className="w-7 h-7 rounded-full bg-[#00e5ff]/20 flex items-center justify-center text-[#00e5ff] font-bold text-xs group-hover:scale-110 transition-transform">
                       F11
                     </div>
                     <span className="text-[10px] font-semibold text-[#00e5ff]">
-                      Tam Ekran
+                      Fullscreen
                     </span>
                   </button>
                 </div>
@@ -207,7 +202,7 @@ export default function InteractiveDemo() {
                       onClick={() => {
                         const newVol = Math.min(100, volume + 5);
                         setVolume(newVol);
-                        triggerAction(`Ses Artırıldı: %${newVol}`);
+                        triggerAction(`Master Volume Up: ${newVol}%`);
                       }}
                       className="flex-1 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] flex items-center justify-center text-zinc-200 active:scale-90 transition-all"
                     >
@@ -215,14 +210,14 @@ export default function InteractiveDemo() {
                     </button>
                     <div className="py-2 text-center">
                       <span className="text-[10px] font-bold text-zinc-400 font-mono">
-                        %{volume}
+                        {volume}%
                       </span>
                     </div>
                     <button
                       onClick={() => {
                         const newVol = Math.max(0, volume - 5);
                         setVolume(newVol);
-                        triggerAction(`Ses Kısıldı: %${newVol}`);
+                        triggerAction(`Master Volume Down: ${newVol}%`);
                       }}
                       className="flex-1 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] flex items-center justify-center text-zinc-200 active:scale-90 transition-all"
                     >
@@ -234,7 +229,7 @@ export default function InteractiveDemo() {
                   <div
                     onClick={() => {
                       setActiveTab("trackpad");
-                      triggerAction("Dinamik Cam Trackpad Genişletildi");
+                      triggerAction("Expanded to Dynamic Glass Trackpad");
                     }}
                     className="flex-1 rounded-2xl bg-gradient-to-b from-[#222232] to-[#12121a] border border-white/15 p-4 flex flex-col items-center justify-center text-center cursor-pointer hover:border-[#00e5ff]/50 transition-all group shadow-xl"
                   >
@@ -242,17 +237,17 @@ export default function InteractiveDemo() {
                       <MousePointer className="w-6 h-6" />
                     </div>
                     <span className="text-xs font-bold text-white tracking-wide">
-                      DOKUN &amp; KAYDIR
+                      TOUCH &amp; GLIDE
                     </span>
                     <span className="text-[10px] text-zinc-400 mt-0.5">
-                      Cam Trackpad Moduna Geç
+                      Switch to Glass Trackpad
                     </span>
                   </div>
 
                   {/* Right Seek Rocker */}
                   <div className="w-16 rounded-2xl bg-[#161622] border border-white/10 flex flex-col justify-between p-1.5 shadow-lg">
                     <button
-                      onClick={() => triggerAction("10 Saniye İleri Sarıldı (+10s)")}
+                      onClick={() => triggerAction("Jumped 10s Forward (+10s)")}
                       className="flex-1 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] flex flex-col items-center justify-center text-zinc-200 active:scale-90 transition-all"
                     >
                       <FastForward className="w-4 h-4 text-[#ff9100]" />
@@ -260,11 +255,11 @@ export default function InteractiveDemo() {
                     </button>
                     <div className="py-2 text-center">
                       <span className="text-[9px] font-bold text-zinc-500 uppercase">
-                        SARMA
+                        SEEK
                       </span>
                     </div>
                     <button
-                      onClick={() => triggerAction("10 Saniye Geri Sarıldı (-10s)")}
+                      onClick={() => triggerAction("Rewound 10s Back (-10s)")}
                       className="flex-1 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] flex flex-col items-center justify-center text-zinc-200 active:scale-90 transition-all"
                     >
                       <Rewind className="w-4 h-4 text-[#ff9100]" />
@@ -276,7 +271,7 @@ export default function InteractiveDemo() {
                 {/* Primary Playback Strip */}
                 <div className="p-2.5 rounded-2xl bg-[#14141e] border border-white/10 flex items-center justify-between shadow-xl">
                   <button
-                    onClick={() => triggerAction("Önceki Parçaya Geçildi")}
+                    onClick={() => triggerAction("Previous Media Track")}
                     className="w-11 h-11 rounded-xl bg-[#1c1c28] flex items-center justify-center text-zinc-300 hover:text-white active:scale-90 transition-all"
                   >
                     <Rewind className="w-5 h-5" />
@@ -287,7 +282,7 @@ export default function InteractiveDemo() {
                     onClick={() => {
                       setIsPlaying(!isPlaying);
                       triggerAction(
-                        isPlaying ? "Medya Duraklatıldı (PAUSE)" : "Medya Oynatılıyor (PLAY)"
+                        isPlaying ? "Media Paused (PAUSE)" : "Media Playing (PLAY)"
                       );
                     }}
                     className="w-14 h-14 rounded-full bg-gradient-to-tr from-[#00e5ff] via-[#00c8e0] to-[#00e676] p-0.5 shadow-[0_0_20px_rgba(0,229,255,0.4)] hover:scale-105 active:scale-95 transition-all"
@@ -302,7 +297,7 @@ export default function InteractiveDemo() {
                   </button>
 
                   <button
-                    onClick={() => triggerAction("Sonraki Parçaya Geçildi")}
+                    onClick={() => triggerAction("Next Media Track")}
                     className="w-11 h-11 rounded-xl bg-[#1c1c28] flex items-center justify-center text-zinc-300 hover:text-white active:scale-90 transition-all"
                   >
                     <FastForward className="w-5 h-5" />
@@ -347,10 +342,10 @@ export default function InteractiveDemo() {
                   {/* Center Text */}
                   <div className="text-center z-10 pointer-events-none">
                     <p className="text-sm font-bold text-white tracking-wide">
-                      1000Hz Ultra Hassas Cam Yüzey
+                      1000Hz Ultra-Responsive Glass Surface
                     </p>
                     <p className="text-[11px] text-zinc-400 mt-1">
-                      Farenizi bu alanda hareket ettirin veya tıklayın
+                      Glide your mouse or click anywhere in this area
                     </p>
                     <span className="inline-block mt-2 px-2.5 py-1 rounded-full bg-black/60 border border-white/10 text-[10px] text-[#00e5ff] font-mono">
                       X: {cursorPos.x}% • Y: {cursorPos.y}%
@@ -368,7 +363,7 @@ export default function InteractiveDemo() {
                         : "bg-[#1c1c28] text-white border-white/15 hover:border-[#00e5ff]/50"
                     }`}
                   >
-                    <span>L-CLICK (Sol Tık)</span>
+                    <span>L-CLICK (Left Click)</span>
                   </button>
 
                   <button
@@ -379,7 +374,7 @@ export default function InteractiveDemo() {
                         : "bg-[#1c1c28] text-zinc-300 border-white/15 hover:border-[#00e676]/50"
                     }`}
                   >
-                    <span>R-CLICK (Sağ Tık)</span>
+                    <span>R-CLICK (Right Click)</span>
                   </button>
                 </div>
               </div>

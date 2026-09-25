@@ -1,54 +1,54 @@
 "use client";
 
 import React, { useState } from "react";
-import { ChevronDown, HelpCircle, Sparkles } from "lucide-react";
+import { ChevronDown, HelpCircle } from "lucide-react";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqs = [
     {
-      q: "TouchBase kullanmak için aktif internet bağlantısı gerekir mi?",
-      a: "Hayır! TouchBase %100 yerel Wi-Fi ağı üzerinden WebSocket ile iletişim kurar. Evinizdeki internet bağlantısı tamamen kesilse bile telefonunuz ve bilgisayarınız aynı modeme bağlı olduğu sürece kusursuz çalışır.",
+      q: "Does TouchBase require an active internet connection?",
+      a: "No! TouchBase communicates 100% over your local Wi-Fi router via local WebSocket sockets. Even if your external broadband internet goes down, your phone and computer will communicate flawlessly as long as they are connected to the same local router.",
     },
     {
-      q: "Gerçekten aylık veya yıllık bir abonelik yok mu?",
-      a: "Kesinlikle hayır. TouchBase Pro'da kullanıcıları bezdiren abonelik modellerine yer yoktur. Tek seferlik ömür boyu (Lifetime) lisans ile bir fincan kahve fiyatına satın alır, yeni cihazlarınızda da tek tıkla lisansınızı geri yükleyebilirsiniz.",
+      q: "Is there really no monthly or annual recurring subscription?",
+      a: "Zero recurring subscriptions. TouchBase Pro follows a transparent 'Lifetime License' model. You pay once—the price of a single coffee—and you own it forever. You can also restore purchases on any new Android device with a single tap.",
     },
     {
-      q: "Hangi Windows sürümleri desteklenmektedir?",
-      a: "Windows 10 ve Windows 11 (64-bit ve ARM) işletim sistemleriyle %100 yerel uyumludur. C# Win32 SendInput motoru sayesinde hiçbir harici sürücü yüklemenize gerek kalmaz.",
+      q: "Which Windows operating system versions are supported?",
+      a: "TouchBase is natively compatible with Windows 10 and Windows 11 (64-bit and ARM64). Our custom C# Win32 SendInput backend handles keyboard and mouse input without requiring intrusive kernel drivers.",
     },
     {
-      q: "Wake-on-LAN bilgisayar kapalıyken nasıl çalışır?",
-      a: "Bilgisayarınız kapalıyken anakart ve ağ kartı düşük güç modunda (5VSB) Magic Packet dinler. TouchBase telefonunuzdan UDP 9 portuna tek tıkla paket fırlatarak bilgisayarınızı yatağınızdan kalkmadan elektriksel olarak uyandırır.",
+      q: "How does Wake-on-LAN power on my computer when it is shut down?",
+      a: "When a computer is powered off or in sleep state, its motherboard and network interface card (NIC) remain in low-power standby (5VSB) listening for network packets. TouchBase broadcasts an industry-standard UDP Port 9 Magic Packet containing your MAC address, telling the hardware to boot up electrically.",
     },
     {
-      q: "Biyometrik Windows Hello kilit açma güvenli midir?",
-      a: "Son derece güvenlidir. Telefondaki parmak iziniz yerel Android Keystore donanımında doğrulanır. PIN kodunuz asla harici bir bulut sunucusuna gönderilmez; yalnızca yerel şifreli soket üzerinden PC'ye iletilir.",
+      q: "Is Windows Hello biometric unlock secure?",
+      a: "Yes. Biometric verification takes place directly inside your Android device's hardware-backed Keystore enclave. Your master PIN or biometric tokens are never transmitted to external cloud servers; they are only shared over the local encrypted socket to unlock the desktop.",
     },
     {
-      q: "Herhangi bir hesap açmam veya e-posta vermem gerekiyor mu?",
-      a: "Hayır. TouchBase sıfır sürtünme prensibiyle tasarlanmıştır. Hesap açma, şifre belirleme, e-posta onaylama gibi gereksiz adımlar yoktur. İndirin, çalıştırın ve hemen kullanın.",
+      q: "Do I need to register an account or give my email address?",
+      a: "Never. TouchBase is designed for frictionless utility. There are no sign-up forms, passwords, verification emails, or telemetry tracking. Just install and start controlling your PC immediately.",
     },
   ];
 
   return (
-    <section id="sss" className="py-24 relative overflow-hidden bg-black">
+    <section id="faq" className="py-24 relative overflow-hidden bg-black">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 mb-4">
             <HelpCircle className="w-3.5 h-3.5 text-[#00e5ff]" />
             <span className="text-xs font-semibold text-[#00e5ff] uppercase tracking-wider">
-              Aklınıza Takılanlar
+              Common Questions
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
-            Sıkça Sorulan Sorular
+            Frequently Asked Questions
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base">
-            TouchBase ve sistemin çalışmasıyla ilgili en çok merak edilen konular.
+            Everything you need to know about TouchBase, connectivity, and licensing.
           </p>
         </div>
 
